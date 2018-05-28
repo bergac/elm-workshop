@@ -59,6 +59,11 @@ update msg model =
             0
 
 
+increment : Int -> Int
+increment a =
+    a + 1
+
+
 
 -- VIEW
 {-

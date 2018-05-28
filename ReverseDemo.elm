@@ -4,7 +4,7 @@ module Main exposing (..)
    TODO 1: Import the onBlur event listener
 -}
 
-import Html exposing (Attribute, Html, div, input, text)
+import Html exposing (Attribute, Html, div, input, li, text, ul)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onBlur, onInput)
 
@@ -87,5 +87,15 @@ view model =
         , div [] [ text (String.reverse model.content) ]
         , Html.br [] []
         , div [] [ text "Stack:" ]
-        , div [] [ text (toString model.stack) ]
+        , div [] [ toHtmlList model.stack ]
         ]
+
+
+toHtmlList : List String -> Html msg
+toHtmlList strings =
+    ul [] (List.map toLi strings)
+
+
+toLi : String -> Html msg
+toLi s =
+    li [] [ text s ]
