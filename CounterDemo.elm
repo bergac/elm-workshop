@@ -102,21 +102,9 @@ style1 =
             , color (hex "1C1C1C")
             , textAlign center
             ]
-        , Css.Foreign.header
-            [ marginBottom (Css.rem 1)
-            ]
         , Css.Foreign.h2
             [ textAlign center
             , color (hex "000000")
-            ]
-        , Css.Foreign.input
-            [ display inline
-            , marginBottom (Css.rem 1)
-            , padding (Css.rem 0.2)
-            , Css.height (Css.rem 2)
-            , border3 (Css.px 1) solid (hex "1C1C1C")
-            , borderRadius (Css.px 5)
-            , Css.width (pct 50)
             ]
         , Css.Foreign.button
             [ margin (Css.rem 1)
@@ -124,18 +112,5 @@ style1 =
             , Css.height (Css.rem 2)
             , border3 (px 1) solid (hex "1C1C1C")
             , borderRadius (px 5)
-            ]
-        , Css.Foreign.class "buttonAdd"
-            [ backgroundColor (hex "c8e782")
-            ]
-        , Css.Foreign.ul
-            [ marginTop (Css.rem 1)
-            , padding (px 0)
-            ]
-        , Css.Foreign.li
-            [ marginBottom (Css.rem 1)
-            , padding (Css.rem 1)
-            , listStyleType none
-            , border3 (px 1) solid (hex "000000")
             ]
         ]
