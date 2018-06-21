@@ -6,6 +6,9 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (onClick, onInput)
 
 
+-- https://ellie-app.com/z2vtH4dZ8wa1
+
+
 main =
     Html.beginnerProgram { model = model, view = view, update = update }
 
