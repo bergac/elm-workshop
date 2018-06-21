@@ -1,4 +1,4 @@
-module Main exposing (..)
+module CounterDemo exposing (main)
 
 import Css exposing (..)
 import Css.Foreign
@@ -36,7 +36,6 @@ model =
 type Msg
     = Increment
     | Decrement
-    | Square
     | Reset
 
 
@@ -49,16 +48,8 @@ update msg model =
         Decrement ->
             Basics.max (model - 1) 0
 
-        Square ->
-            model * model
-
         Reset ->
             0
-
-
-increment : Int -> Int
-increment a =
-    a + 1
 
 
 
@@ -74,7 +65,6 @@ view model =
         , div [] [ text ("Count: " ++ toString model) ]
         , button [ onClick Decrement ] [ text "-" ]
         , button [ onClick Increment ] [ text "+" ]
-        , button [ onClick Square ] [ text "*" ]
         , br [] []
         , button [ onClick Reset ] [ text "reset" ]
         ]
