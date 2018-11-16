@@ -6,9 +6,9 @@ This repository contains some exercises to work with Elm. Some exercises are
 an extension of an Elm Architecture tutorial (recommended to do these as well,
 see https://guide.elm-lang.org/architecture/).
 
-You could use Ellie-app (https://ellie-app.com) to write, compile and format the
-code. Ellie-app doesn’t work optimal if you’re browsing in incognito modus.
-If you want to save your work, click on Save in Ellies UI and save the URL
+You could use [Ellie App](https://ellie-app.com) to write, compile and format
+the code. Ellie App doesn’t work optimal if you’re browsing in incognito modus.
+If you want to save your work, click on `Save` in Ellies UI and save the URL
 somewhere. If you already have Elm installed, and know how to develop using
 `elm reactor` or `elm make`, feel free to do the assignments on your own machine.  
 
@@ -22,10 +22,10 @@ Good luck!
 (The solutions are in the `solutions` branch ;) )
 
 ## How to run the demo's?
-* Use the online editor [Ellie App](https://ellie-app.com) (recommended). Every
-Elm exercise file should have an URL to Ellie. The workshop in Ellie App is the
-same as in the file. I did not add any styling though.
-* If Elm is installed, run `elm-reactor` in the root directory of this project
+* Use the online editor [Ellie App](https://ellie-app.com) (recommended). Below
+are the URL's. The workshop in Ellie App is the same as in the file. I did not
+add any styling though.
+* If Elm is installed, run `elm reactor` in the root directory of this project
 and go to http://localhost:8000.
 
 ## Ellie App URLs
@@ -52,8 +52,8 @@ written in the input field is shown. Implement the following features:
 text in the input field should be saved to the state (for example add the text
   to a List in model).
 * Every saved text item should be shown below “list of strings go down here”.
-The code already contains methods to show a List in HTML (toHtmlList and toLi).
-Use these to show the saved items.
+The code already contains methods to show a List in HTML (`toHtmlList` and
+  `toLi`). Use these to show the saved items.
 * Bonus: remember the total number of subjects, by using the counter in the
 model.
 
@@ -64,12 +64,12 @@ these features.
 Go to https://ellie-app.com/3TYPbHKcKvLa1 and click on ‘compile’. You can see a
 few things:
 - An input field;
-- A button with ‘Add User’;
+- A button with `Add User`;
 - An icon (Gravatar icon), which shows the image of the email address in the
 input field real-time;
 - 2 block elements with mentor details.
-Fill ‘MyEmailAddress@example.com’ in the input field. The corresponding icon is
-shown. The ‘Add User button doesn’t do anything yet. You are going to add some
+Fill MyEmailAddress@example.com in the input field. The corresponding icon is
+shown. The `Add User` button doesn’t do anything yet. You are going to add some
 features to this app, so that you can add users and show some details about
 them. If you also like to add yourself, you can create a profile at
 https://www.gravatar.com if you haven’t done that already.
@@ -77,8 +77,8 @@ https://www.gravatar.com if you haven’t done that already.
 With Gravatar you can link a profile picture (avatar) to your email address.
 Many website use Gravatar, such as StackOverflow or GitHub. After completing all
 the TODOs (14 in total), the app should:
-* make an HTTP GET request to Gravatar when the ‘Add User button is clicked for
-the email address that’s in the input field
+* make an `HTTP GET` request to Gravatar when the `Add User` button is clicked
+for the email address that’s in the input field
 * should parse the response from Gravatar and extract some fields to show in the
 view (response example: https://en.gravatar.com/5b539801779e61e89ae25afccf0069ff.json)
 * should save every added user to a list of users
