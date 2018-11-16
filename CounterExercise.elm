@@ -1,28 +1,12 @@
 module Main exposing (..)
 
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Html.Events exposing (..)
-
-
--- https://ellie-app.com/z2qFJn5bZ8a1
+import Browser
+import Html exposing (Html, button, div, span, text)
+import Html.Events exposing (onClick)
 
 
 main =
-    Html.beginnerProgram { model = model, view = view, update = update }
-
-
-
--- MODEL
-
-
-type alias Model =
-    Int
-
-
-model : Model
-model =
-    0
+    Browser.sandbox { init = 0, update = update, view = view }
 
 
 
@@ -33,25 +17,25 @@ model =
 
 
 type Msg
-    = AddFastTrackSession
-    | RemoveFastTrackSession
+    = Increment
+    | Decrement
 
 
 
 {-
    TODO 2: Add a new Reset case
-   TODO 4: Prevent RemoveFastTrackSession from going below 0
+   TODO 4: Prevent Decrement from going below 0
    TODO 5: Build new cases or add new functionality for a counter (e.g. +2 or -10)
 -}
 
 
-update : Msg -> Model -> Model
+update : Msg -> Int -> Int
 update msg model =
     case msg of
-        AddFastTrackSession ->
+        Increment ->
             model + 1
 
-        RemoveFastTrackSession ->
+        Decrement ->
             model - 1
 
 
@@ -62,15 +46,15 @@ update msg model =
 -}
 
 
-view : Model -> Html Msg
+view : Int -> Html Msg
 view model =
-    div [ class "container" ]
-        [ div [ class "button-container" ]
-            [ button [ class "button-remove", onClick RemoveFastTrackSession ] [ text "Remove Fast Track Session" ]
-            , button [ class "button-add", onClick AddFastTrackSession ] [ text "Add Fast Track Session" ]
+    div []
+        [ div []
+            [ button [ onClick Decrement ] [ text "-1" ]
+            , button [ onClick Increment ] [ text "+1" ]
             ]
-        , div [ class "counter-container" ]
-            [ span [ class "fast-track-counter" ] [ text (toString model) ]
-            , span [ class "fast-track-counter-label" ] [ text " Fast Track Sessions Planned" ]
+        , div []
+            [ span [] [ text "Counter: " ]
+            , span [] [ text (String.fromInt model) ]
             ]
         ]

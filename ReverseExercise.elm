@@ -1,17 +1,17 @@
 module Main exposing (..)
 
--- https://ellie-app.com/z2tJGz3h4ra1
 {-
    TODO 1: Import the onBlur event listener
 -}
 
-import Html exposing (Attribute, Html, div, input, li, text, ul)
-import Html.Attributes exposing (..)
-import Html.Events exposing (onBlur, onInput)
+import Browser
+import Html exposing (Html, div, input, li, text, ul)
+import Html.Attributes exposing (placeholder)
+import Html.Events exposing (onInput)
 
 
 main =
-    Html.beginnerProgram { model = model, view = view, update = update }
+    Browser.sandbox { init = init, update = update, view = view }
 
 
 
@@ -35,8 +35,8 @@ type alias Model =
 -}
 
 
-model : Model
-model =
+init : Model
+init =
     { content = ""
     , stack = []
     }
@@ -51,7 +51,6 @@ model =
 
 type Msg
     = Change String
-    | Store
 
 
 
@@ -66,30 +65,28 @@ update msg model =
         Change newContent ->
             { model | content = newContent }
 
-        Store ->
-            { model
-                | stack = String.reverse model.content :: model.stack
-                , content = ""
-            }
-
 
 
 -- VIEW
 {-
    TODO 6: Add the onBlur handler to the input which should fire the created action in TODO 4.
-   TODO 7: Add the new html to display the new value from the model created in TODO 1.
+   TODO 7: Add the new html below Html.br to display the new value from the model created in TODO 1.
 -}
 
 
 view : Model -> Html Msg
 view model =
     div []
-        [ input [ placeholder "Text to reverse", onBlur Store, onInput Change ] []
+        [ input [ placeholder "Text to reverse", onInput Change ] []
         , div [] [ text (String.reverse model.content) ]
         , Html.br [] []
-        , div [] [ text "Stack:" ]
-        , div [] [ toHtmlList model.stack ]
+        , div [] [ text "list of strings go down here:" ]
+        , div [] []
         ]
+
+
+
+{--functions you could use to show your --}
 
 
 toHtmlList : List String -> Html msg
