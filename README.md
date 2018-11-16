@@ -19,6 +19,8 @@ The official Elm syntax guide: https://elm-lang.org/docs/syntax
 
 Good luck!
 
+(The solutions are in the `solutions` branch ;) )
+
 ## How to run the demo's?
 * Use the online editor [Ellie App](https://ellie-app.com) (recommended). Every
 Elm exercise file should have an URL to Ellie. The workshop in Ellie App is the
